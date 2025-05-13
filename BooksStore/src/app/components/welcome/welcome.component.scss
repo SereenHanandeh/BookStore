@@ -1,0 +1,123 @@
+
+
+
+.welcome {
+  width: 40%;
+  position: relative;
+  padding: 80px 30px;
+   background: linear-gradient(135deg, #c2dae5, #85bfeb);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  margin: 40px auto 0 auto; 
+
+}
+
+.welcome h1 {
+  font-size: 3.5rem;
+  color: #2c3e50;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+  transform: translateZ(30px);
+}
+
+.welcome p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+  transform: translateZ(20px);
+}
+
+.icons-row {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  transform: translateZ(15px);
+}
+
+.icons-row .icon {
+  width: 60px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.icons-row .icon:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.cta h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.explore-btn,
+.cart-btn {
+  padding: 14px 28px;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.explore-btn {
+  background: linear-gradient(45deg, #28a745, #34d058);
+  color: #fff;
+}
+
+.explore-btn:hover {
+  background: linear-gradient(45deg, #34d058, #28a745);
+  transform: translateY(-3px);
+}
+
+.cart-btn {
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  color: #fff;
+}
+
+.cart-btn:hover {
+  background: linear-gradient(45deg, #00c6ff, #007bff);
+  transform: translateY(-3px);
+}
+
+/* خلفية متحركة خفيفة */
+.background-effect {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+  animation: rotate 20s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.welcome > *:not(.background-effect) {
+  position: relative;
+  z-index: 1;
+}

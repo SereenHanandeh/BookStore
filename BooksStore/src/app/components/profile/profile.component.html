@@ -1,0 +1,46 @@
+<div class="profile-container">
+  <h2>Your Profile</h2>
+
+  <div *ngIf="!isEditing" class="profile-card">
+    <img
+      [src]="user.image || defaultImage"
+      alt="Profile Image"
+      class="profile-image"
+    />
+
+    <p><strong>Name:</strong> {{ user.name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Phone Number:</strong> {{ user.phone || "Unavailable" }}</p>
+    <button class="edit-btn" (click)="toggleEdit()">Edit</button>
+  </div>
+
+  <form *ngIf="isEditing" (ngSubmit)="saveProfile()" class="edit-form">
+    <div class="file-input-wrapper">
+      <input type="file" (change)="onImageChange($event)" />
+    </div>
+    <input
+      type="text"
+      [(ngModel)]="user.name"
+      name="name"
+      placeholder="Name"
+      required
+    />
+    <input
+      type="email"
+      [(ngModel)]="user.email"
+      name="email"
+      placeholder="Email"
+      required
+    />
+    <input
+      type="text"
+      [(ngModel)]="user.phone"
+      name="phone"
+      placeholder="Phone Number"
+    />
+    <div class="btn-group">
+      <button type="submit">Save</button>
+      <button type="button" (click)="toggleEdit()">Cancel</button>
+    </div>
+  </form>
+</div>

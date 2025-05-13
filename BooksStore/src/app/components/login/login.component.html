@@ -1,0 +1,48 @@
+<div class="form-container">
+  <h2>{{ 'LOGIN.TITLE' | translate }}</h2>
+  <form (ngSubmit)="login()" #form="ngForm">
+    <input
+      type="email"
+      [(ngModel)]="email"
+      name="email"
+      [placeholder]="'LOGIN.EMAIL_PLACEHOLDER' | translate"
+      required
+    />
+
+    <div class="password-wrapper">
+      <input
+        [type]="showPassword ? 'text' : 'password'"
+        [(ngModel)]="password"
+        name="password"
+        [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate"
+        required
+      />
+      <i
+        class="fa"
+        [class.fa-eye]="!showPassword"
+        [class.fa-eye-slash]="showPassword"
+        (click)="togglePassword()"
+      ></i>
+    </div>
+
+    <!-- Remember me checkbox -->
+    <div class="remember-me-container">
+      <label>
+        <input type="checkbox" [(ngModel)]="rememberMe" />
+        {{ 'LOGIN.REMEMBER_ME' | translate }}
+      </label>
+    </div>
+
+    <button type="submit" [disabled]="!form.valid">
+      {{ 'LOGIN.BUTTON' | translate }}
+    </button>
+
+    <!-- Link to registration page -->
+    <div class="signup-link">
+      <p>
+        {{ 'LOGIN.NO_ACCOUNT' | translate }}
+        <a routerLink="/register">{{ 'LOGIN.SIGNUP_LINK' | translate }}</a>
+      </p>
+    </div>
+  </form>
+</div>

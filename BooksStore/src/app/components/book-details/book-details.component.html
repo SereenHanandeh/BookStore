@@ -1,0 +1,23 @@
+<div *ngIf="book; else loading">
+  <div class="book-details-card">
+    <div class="book-details-content">
+      <img [src]="book.cover" alt="{{ book.title }}" class="book-image" />
+      <div class="book-info">
+        <h2>{{ book.title }}</h2>
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>Category:</strong> {{ book.category }}</p>
+        <p><strong>Description:</strong> {{ book.description }}</p>
+        <p><strong>Price:</strong> {{ book.price }} JD</p>
+        <p><strong>Stock:</strong> {{ book.stock }}</p>
+        <button (click)="addToCart(book)" class="add-to-cart-button">
+          <i class="fas fa-shopping-cart"></i> Add to Cart
+        </button>
+        <a routerLink="/books" class="back-button"> ← Back to Books </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p class="loading-text">Loading book details...</p>
+</ng-template>

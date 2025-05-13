@@ -1,0 +1,72 @@
+.profile-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  border-radius: 20px;
+  box-shadow: 25px 25px 60px #bebebe, -25px -25px 60px #ffffff;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.profile-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.profile-card, .edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 5px solid #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+.profile-card p {
+  font-size: 16px;
+  margin: 8px 0;
+  color: #444;
+}
+
+.edit-btn, .btn-group button {
+  background: #00b4d8;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  margin: 10px 5px;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px #b8b8b8, -3px -3px 10px #ffffff;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.edit-btn:hover, .btn-group button:hover {
+  background: #0077b6;
+  transform: translateY(-2px);
+}
+
+.edit-form input[type="text"],
+.edit-form input[type="email"],
+.edit-form input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  box-shadow: inset 3px 3px 6px #d1d1d1, inset -3px -3px 6px #ffffff;
+}

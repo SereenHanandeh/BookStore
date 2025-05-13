@@ -1,0 +1,338 @@
+.book-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* عام */
+.book-list {
+  padding: 2rem;
+}
+
+/* فلتر الفئة وحقل البحث */
+.filter-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  background-color: #f7f7f7;
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.category-filter,
+.search-input {
+  padding: 0.9rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 250px;
+}
+
+.category-filter:focus,
+.search-input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
+}
+
+.search-input {
+  width: 300px;
+}
+
+/* تصميم الكتب */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.book-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.book-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  border: 4px solid #0000;
+  border-radius: 50%;
+  border-color: #ccc #0000;
+  animation: l16 1s infinite linear;
+}
+.loader::before,
+.loader::after {    
+  content: "";
+  grid-area: 1/1;
+  margin: 2px;
+  border: inherit;
+  border-radius: 50%;
+}
+.loader::before {
+  border-color: #f03355 #0000;
+  animation: inherit; 
+  animation-duration: .5s;
+  animation-direction: reverse;
+}
+.loader::after {
+  margin: 8px;
+}
+@keyframes l16 { 
+  100%{transform: rotate(1turn)}
+}
+
+.book-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.book-card h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.book-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+/* الأزرار */
+.button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.btn-custom {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary-custom {
+  background-color: #3498db;
+  color: white;
+  border: none;
+}
+
+.btn-primary-custom:hover {
+  background-color: #2980b9;
+}
+
+.btn-success-custom {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+}
+
+.btn-success-custom:hover {
+  background-color: #27ae60;
+}
+
+.fas {
+  margin-right: 0.5rem;
+}
+
+.no-results-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #e74c3c;
+  margin: 2rem 0;
+  font-weight: bold;
+}
+
+
+.books-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  gap: 16px; 
+  width: 100%;
+  max-width: 400px; 
+  margin: 0 auto; 
+}
+
+.btn-custom {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  width: 90%;
+  background-color: #007bff;
+  background-image: linear-gradient(45deg, #007bff, #00aaff);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(45deg, #00aaff, #007bff);
+}
+
+.btn-primary-custom {
+  background-color: #007bff;
+  background-image: linear-gradient(45deg, #007bff, #00aaff);
+}
+
+.btn-primary-custom:hover {
+  background-image: linear-gradient(45deg, #00aaff, #007bff);
+}
+
+/* زر إضافة إلى السلة */
+.btn-success-custom {
+  background-color: #28a745;
+  background-image: linear-gradient(45deg, #28a745, #34d058);
+}
+
+.btn-success-custom:hover {
+  background-image: linear-gradient(45deg, #34d058, #28a745);
+}
+
+/* إضافة أيقونة داخل الزر */
+.btn-custom i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Responsive Grid */
+@media (min-width: 600px) {
+  .books-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .books-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* فلتر الفئة */
+.category-filter {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  transition: border 0.3s ease;
+}
+
+.category-filter:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* التصميم لبقية العناصر */
+.book-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-input {
+  padding: 12px 16px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.books-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.book-card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 16px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.book-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.book-card h2 {
+  font-size: 20px;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.book-card p {
+  margin: 4px 0;
+  color: #555;
+  font-size: 14px;
+}

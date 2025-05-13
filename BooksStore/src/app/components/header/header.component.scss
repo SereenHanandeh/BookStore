@@ -1,0 +1,89 @@
+.navbar-3d {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  padding: 1rem 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 0 0 15px 15px;
+  font-family: 'Segoe UI', sans-serif;
+  flex-wrap: wrap;
+}
+
+.store-name a {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 2px 2px 0 #1e90ff, 4px 4px 0 #555;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.store-name a:hover {
+  transform: scale(1.05);
+  text-shadow: 3px 3px 0 #3faaff, 5px 5px 0 #444;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
+}
+
+.user-name {
+  font-weight: bold;
+  color: #fff;
+  margin-right: 1rem;
+}
+
+.btn-3d {
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  background-color: #4e9af1;
+  color: white !important;
+  font-weight: bold;
+  box-shadow: 0 4px #2c79c1;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-3d:hover {
+  background-color: #357ec7;
+  transform: translateY(-2px);
+  box-shadow: 0 6px #1e5f9d;
+}
+
+.logout {
+  background-color: #f44336;
+  box-shadow: 0 4px #c62828;
+}
+
+.logout:hover {
+  background-color: #d32f2f;
+  box-shadow: 0 6px #b71c1c;
+}
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}

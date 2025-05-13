@@ -1,0 +1,81 @@
+<div class="form-container">
+  <h2>Create Account</h2>
+  <form (ngSubmit)="register()" #form="ngForm">
+    <input
+      type="text"
+      [(ngModel)]="user.name"
+      name="name"
+      placeholder="Full Name"
+      required
+    />
+
+    <input
+      type="email"
+      [(ngModel)]="user.email"
+      name="email"
+      placeholder="Email Address"
+      required
+      #email="ngModel"
+      email
+    />
+    <div *ngIf="email.invalid && email.touched" class="error-message">
+      Please enter a valid email.
+    </div>
+
+    <div class="password-wrapper">
+      <input
+        [type]="showPassword ? 'text' : 'password'"
+        [(ngModel)]="user.password"
+        name="password"
+        placeholder="Password"
+        required
+        minlength="8"
+        #password="ngModel"
+      />
+      <i
+        class="fa"
+        [class.fa-eye]="!showPassword"
+        [class.fa-eye-slash]="showPassword"
+        (click)="togglePassword()"
+      ></i>
+    </div>
+
+    <div *ngIf="user.password" class="password-strength">
+      <ul>
+        <li [ngClass]="{'valid': passwordStrength === 'Strong'}">At least 8 characters</li>
+        <li [ngClass]="{'valid': hasUpperCase}">Contains at least one uppercase letter</li>
+        <li [ngClass]="{'valid': hasNumber}">Contains at least one number</li>
+        <li [ngClass]="{'valid': hasSpecialChar}">Contains at least one special character</li>
+      </ul>
+    </div>
+
+    <div class="password-wrapper">
+      <input
+        [type]="showConfirmPassword ? 'text' : 'password'"
+        [(ngModel)]="confirmPassword"
+        name="confirmPassword"
+        placeholder="Confirm Password"
+        required
+      />
+      <i
+        class="fa"
+        [class.fa-eye]="!showConfirmPassword"
+        [class.fa-eye-slash]="showConfirmPassword"
+        (click)="toggleConfirmPassword()"
+      ></i>
+    </div>
+
+    <div *ngIf="passwordMismatch" class="error-message">
+      Passwords do not match.
+    </div>
+
+    <button type="submit" [disabled]="passwordMismatch || !form.valid">
+      Register
+    </button>
+  </form>
+
+
+  <div class="login-link">
+    <p>Do you have an account? <a routerLink="/login">Login here</a></p>
+  </div>
+</div>

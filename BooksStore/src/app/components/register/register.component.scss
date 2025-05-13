@@ -1,0 +1,129 @@
+.form-container {
+  max-width: 420px;
+  margin: 70px auto;
+  padding: 35px 30px;
+  background: linear-gradient(145deg, #f0f0f0, #dcdcdc);
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px #c9c9c9, -10px -10px 20px #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 26px;
+    color: #333;
+    transform: translateZ(10px);
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    background: #eaeaea;
+    box-shadow: inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff;
+    transition: box-shadow 0.3s, transform 0.2s;
+
+    &:focus {
+      outline: none;
+      transform: scale(1.02);
+      box-shadow: inset 2px 2px 5px #bebebe, inset -2px -2px 5px #ffffff;
+    }
+  }
+
+  .password-wrapper {
+    position: relative;
+
+    input {
+      padding-right: 40px;
+    }
+
+    i {
+      position: absolute;
+      top: 50%;
+      right: 14px;
+      transform: translateY(-50%) translateZ(5px);
+      cursor: pointer;
+      color: #007bff;
+      font-size: 16px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #6c63ff;
+      }
+    }
+  }
+
+  .error-message {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-bottom: 15px;
+    transform: translateZ(8px);
+  }
+
+  button {
+    padding: 14px;
+    background: linear-gradient(145deg, #6c63ff, #5848e4);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px #bbb, -4px -4px 10px #fff;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 6px 6px 15px #aaa, -6px -6px 15px #fff;
+    }
+
+    &:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+}
+.password-strength {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  color: #333;
+}
+
+.password-strength {
+  color: red;
+}
+
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+
+
+button:disabled {
+  background-color: #ccc;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}

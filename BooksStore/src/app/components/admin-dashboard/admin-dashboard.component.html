@@ -1,0 +1,47 @@
+<!-- جدول المستخدمين -->
+<div class="admin-dashboard">
+  <h2>Admin Dashboard</h2>
+
+  <h3>Users</h3>
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <button class="btn edit-btn" (click)="editUser(user)">Edit</button>
+          <button class="btn delete-btn" (click)="deleteUser(user.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <h3>Products</h3>
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.description }}</td>
+        <td>
+          <button class="btn edit-btn" (click)="editProduct(product)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table> -->
+</div>

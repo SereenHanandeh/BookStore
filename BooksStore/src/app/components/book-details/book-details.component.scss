@@ -1,0 +1,106 @@
+.book-details-card {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.book-details-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.book-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.book-info {
+  flex: 1;
+  padding: 10px;
+}
+
+.book-info h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.book-info p {
+  font-size: 16px;
+  margin: 8px 0;
+  color: #555;
+}
+
+.book-info .price {
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* تصميم زر "Add to Cart" مع رمز السلة */
+.add-to-cart-button {
+  background-color: #28a745;
+  background-image: linear-gradient(45deg, #28a745, #34d058);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-image 0.3s ease;
+  display: inline-flex; /* استخدام flexbox للمحاذاة */
+  align-items: center; /* محاذاة النص مع الأيقونة */
+  justify-content: center;
+}
+
+/* تصميم أيقونة السلة */
+.add-to-cart-button i {
+  margin-right: 8px; /* إضافة مسافة بين الأيقونة والنص */
+}
+
+/* تأثير عند التمرير على الزر */
+.add-to-cart-button:hover {
+  background-image: linear-gradient(45deg, #34d058, #28a745);
+}
+
+/* تأثير عند الضغط على الزر */
+.add-to-cart-button:active {
+  background-image: linear-gradient(45deg, #2e8b57, #2c8b47);
+}
+
+
+.back-button {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+.loading-text {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+  margin-top: 50px;
+}

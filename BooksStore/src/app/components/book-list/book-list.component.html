@@ -1,0 +1,46 @@
+<div class="book-list">
+  <!-- فلتر الفئة -->
+  <div class="filter-container">
+    <select [(ngModel)]="selectedCategory" class="category-filter">
+      <option value="">All Categories</option>
+      <option *ngFor="let category of uniqueCategories" [value]="category">
+        {{ category }}
+      </option>
+    </select>
+
+    <!-- حقل البحث -->
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Search books..."
+      [(ngModel)]="searchQuery"
+    />
+  </div>
+
+ 
+  <div *ngIf="filteredBooks.length === 0" class="no-results-message">
+  <p>No books found matching your search criteria.</p>
+</div>
+
+
+  <div class="books-grid">
+    <div class="book-card" *ngFor="let book of filteredBooks">
+      <img [src]="book.cover" alt="{{ book.title }}" class="book-image" />
+      <h2>{{ book.title }}</h2>
+      <p><strong>Price:</strong> {{ book.price }} JD</p>
+      <p><strong>Category:</strong> {{ book.category }}</p>
+
+      <div class="button-container">
+        <a
+          [routerLink]="['/books', book.id]"
+          class="btn-custom btn-primary-custom"
+        >
+          <i class="fas fa-info-circle"></i> Details
+        </a>
+        <button class="btn-custom btn-success-custom" (click)="addToCart(book)">
+          <i class="fas fa-cart-plus"></i> Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "LOGIN": {
+    "TITLE": "تسجيل الدخول",
+    "EMAIL_PLACEHOLDER": "البريد الإلكتروني",
+    "PASSWORD_PLACEHOLDER": "كلمة المرور",
+    "REMEMBER_ME": "تذكرني",
+    "BUTTON": "دخول",
+    "NO_ACCOUNT": "ليس لديك حساب؟",
+    "SIGNUP_LINK": "سجّل من هنا"
+  }
+}

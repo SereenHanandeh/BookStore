@@ -1,0 +1,168 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "Clean Code",
+      "author": "Robert C. Martin",
+      "price": 19.99,
+      "description": "A Handbook of Agile Software Craftsmanship",
+      "cover": "https://res.cloudinary.com/dyr3s9pqn/image/upload/v1747081496/c_oqdmaq.jpg",
+      "category": "Programming",
+      "stock": 10
+    },
+    {
+      "id": "2",
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "price": 14.99,
+      "description": "An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+      "cover": "https://res.cloudinary.com/dyr3s9pqn/image/upload/v1747081497/aa_wp1bez.jpg",
+      "category": "Self-Development",
+      "stock": 7
+    },
+    {
+      "id": "3",
+      "title": "The Pragmatic Programmer",
+      "author": "Andrew Hunt & David Thomas",
+      "price": 24.5,
+      "description": "Your Journey to Mastery",
+      "cover": "https://res.cloudinary.com/dyr3s9pqn/image/upload/v1747081496/pp_y0rh3a.jpg",
+      "category": "Programming",
+      "stock": 5
+    },
+    {
+      "id": "4",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "price": 12,
+      "description": "A novel of warmth and humor, despite dealing with serious issues",
+      "cover": "https://res.cloudinary.com/dyr3s9pqn/image/upload/v1747081496/images_tbj4xn.jpg",
+      "category": "Fiction",
+      "stock": 8
+    },
+    {
+      "id": "5",
+      "title": "Thinking, Fast and Slow",
+      "author": "Daniel Kahneman",
+      "price": 16.75,
+      "description": "Explores the dual systems of the human mind",
+      "cover": "https://res.cloudinary.com/dyr3s9pqn/image/upload/v1747081497/tt_zohbxt.jpg",
+      "category": "Psychology",
+      "stock": 6
+    },
+    {
+      "id": "6",
+      "title": "The Subtle Art of Not Giving a F*ck",
+      "author": "Mark Manson",
+      "price": 13.99,
+      "description": "A Counterintuitive Approach to Living a Good Life",
+      "cover": "https://res.cloudinary.com/dyr3s9pqn/image/upload/v1747081497/sa_zfyfgh.jpg",
+      "category": "Self-Development",
+      "stock": 12
+    },
+    {
+      "id": "7",
+      "title": "Educated",
+      "author": "Tara Westover",
+      "price": 18.5,
+      "description": "A Memoir of a Family and a Life Reclaimed",
+      "cover": "https://res.cloudinary.com/dyr3s9pqn/image/upload/v1747081497/edu_fzqsmh.jpg",
+      "category": "Biography",
+      "stock": 4
+    },
+    {
+      "id": "8",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "price": 10.99,
+      "description": "A Novel About the American Dream",
+      "cover": "https://res.cloudinary.com/dyr3s9pqn/image/upload/v1747081497/great_gatsby_xqfryq.jpg",
+      "category": "Fiction",
+      "stock": 9
+    },
+    {
+      "id": "9",
+      "title": "Sapiens: A Brief History of Humankind",
+      "author": "Yuval Noah Harari",
+      "price": 21.99,
+      "description": "A History of Humankind from the Stone Age to the Modern Age",
+      "cover": "https://res.cloudinary.com/dyr3s9pqn/image/upload/v1747081496/sapiens_bgsxqs.jpg",
+      "category": "History",
+      "stock": 11
+    },
+    {
+      "id": "10",
+      "title": "Becoming",
+      "author": "Michelle Obama",
+      "price": 17.99,
+      "description": "A Memoir by the Former First Lady of the United States",
+      "cover": "https://res.cloudinary.com/dyr3s9pqn/image/upload/v1747081496/becoming_ovrm0j.jpg",
+      "category": "Biography",
+      "stock": 14
+    },
+    {
+      "id": "11",
+      "title": "Educating Rita",
+      "author": "Willy Russell",
+      "price": 8.99,
+      "description": "A Play About a Woman's Journey of Self-Discovery",
+      "cover": "https://res.cloudinary.com/dyr3s9pqn/image/upload/v1747081497/educating_rita_o7j8bb.jpg",
+      "category": "Drama",
+      "stock": 5
+    },
+    {
+      "id": "12",
+      "title": "The Art of War",
+      "author": "Sun Tzu",
+      "price": 9.99,
+      "description": "A Classic Guide to Strategy and Tactics",
+      "cover": "https://res.cloudinary.com/dyr3s9pqn/image/upload/v1747081496/art_of_war_r5ah7f.jpg",
+      "category": "Philosophy",
+      "stock": 15
+    },
+    {
+      "id": "13",
+      "title": "1984",
+      "author": "George Orwell",
+      "price": 13.49,
+      "description": "A Dystopian Novel on Totalitarianism and Surveillance",
+      "cover": "https://res.cloudinary.com/dyr3s9pqn/image/upload/v1747081497/1984_ovfxyc.jpg",
+      "category": "Fiction",
+      "stock": 8
+    },
+    {
+      "id": "14",
+      "title": "The Power of Habit",
+      "author": "Charles Duhigg",
+      "price": 16.25,
+      "description": "Why We Do What We Do and How to Change",
+      "cover": "https://res.cloudinary.com/dyr3s9pqn/image/upload/v1747081496/the_power_of_habit_abz9wd.jpg",
+      "category": "Self-Development",
+      "stock": 7
+    },
+    {
+      "id": "15",
+      "title": "Rich Dad Poor Dad",
+      "author": "Robert Kiyosaki",
+      "price": 15.99,
+      "description": "What the Rich Teach Their Kids About Money",
+      "cover": "https://res.cloudinary.com/dyr3s9pqn/image/upload/v1747081496/rich_dad_poor_dad_jxz3pi.jpg",
+      "category": "Finance",
+      "stock": 6
+    }
+  ],
+  "users": [
+    {
+      "name": "Admin",
+      "email": "admin@example.com",
+      "role": "admin",
+      "id": "1"
+    },
+    {
+      "name": "sereen esam hanandeh",
+      "email": "s@gmail.com",
+      "role": "user",
+      "id": "ca6f"
+    }
+  ]
+}

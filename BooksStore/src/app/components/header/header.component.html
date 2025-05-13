@@ -1,0 +1,45 @@
+<nav class="navbar-3d">
+  <div class="store-name">
+    <a routerLink="/books">📚 Bookify</a>
+  </div>
+
+  <div class="nav-links">
+    <!-- Show the "Home" link only for users who are not logged in -->
+    <ng-container *ngIf="!isLoggedIn">
+      <a routerLink="/">🏠 Home</a>
+    </ng-container>
+
+    <!-- Add the link to the books page here -->
+    <a routerLink="/books">📚 Books</a>
+
+    <ng-container *ngIf="isLoggedIn; else guestLinks">
+      <span class="user-name">👋 Hello, {{ userName }}</span>
+
+      <!-- Admin links appear only for users with role "admin" -->
+      <ng-container *ngIf="userRole === 'admin'">
+        <a routerLink="/profile" class="profile-link">
+          <img [src]="userImage" alt="Profile" class="profile-image" />
+          Profile
+        </a>
+        <a routerLink="/admin">🛠️ Admin Panel</a>
+
+        <a (click)="logout()">🚪 Logout</a>
+      </ng-container>
+
+      <!-- Non-admin users' regular links -->
+      <ng-container *ngIf="userRole !== 'admin'">
+        <a routerLink="/profile" class="profile-link">
+          <img [src]="userImage" alt="Profile" class="profile-image" />
+          Profile
+        </a>
+        <a routerLink="/cart">🛒 Cart</a>
+        <a (click)="logout()">🚪 Logout</a>
+      </ng-container>
+    </ng-container>
+
+    <ng-template #guestLinks>
+      <a routerLink="/login">🔑 Login</a>
+      <a routerLink="/register">📝 Register</a>
+    </ng-template>
+  </div>
+</nav>

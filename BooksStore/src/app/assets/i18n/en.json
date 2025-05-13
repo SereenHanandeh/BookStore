@@ -1,0 +1,11 @@
+{
+  "LOGIN": {
+    "TITLE": "Login",
+    "EMAIL_PLACEHOLDER": "Email Address",
+    "PASSWORD_PLACEHOLDER": "Password",
+    "REMEMBER_ME": "Remember Me",
+    "BUTTON": "Login",
+    "NO_ACCOUNT": "Don't have an account?",
+    "SIGNUP_LINK": "Sign up here"
+  }
+}
