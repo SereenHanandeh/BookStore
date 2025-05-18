@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -14,10 +14,7 @@ export class AdminDashboardComponent {
   selectedUser: any = null;
   editForm!: FormGroup;
 
-  constructor(
-    private http: HttpClient,
-    private fb: FormBuilder
-  ) {}
+  constructor(private http: HttpClient, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.loadUsers();
@@ -31,7 +28,7 @@ export class AdminDashboardComponent {
   loadUsers() {
     this.http.get<any[]>('http://localhost:3000/users').subscribe({
       next: (data) => {
-        this.users = data.filter(user => user.role === 'user');
+        this.users = data.filter((user) => user.role === 'user');
       },
       error: (err) => {
         console.error('Error loading users:', err);
@@ -57,21 +54,21 @@ export class AdminDashboardComponent {
 
   editUser(user: any) {
     this.selectedUser = user;
-    this.editForm.patchValue(user); // تعبئة النموذج بالقيم الحالية
+    this.editForm.patchValue(user); 
   }
 
   saveUserChanges() {
     if (!this.selectedUser) return;
 
     const updatedUser = this.editForm.value;
-    
+
     this.http
       .put(`http://localhost:3000/users/${this.selectedUser.id}`, updatedUser)
       .subscribe({
         next: () => {
           alert('تم تعديل المستخدم');
-          this.selectedUser = null; 
-          this.loadUsers(); 
+          this.selectedUser = null;
+          this.loadUsers();
         },
         error: (err) => {
           console.error('Error updating user:', err);
@@ -82,6 +79,6 @@ export class AdminDashboardComponent {
 
   cancelEdit() {
     this.selectedUser = null;
-    this.editForm.reset(); 
+    this.editForm.reset();
   }
 }

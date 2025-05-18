@@ -1,0 +1,71 @@
+<div class="add-book-form">
+  <h2>Add New Book</h2>
+  <form (ngSubmit)="addBook()" #bookForm="ngForm">
+    <input
+      type="text"
+      name="title"
+      [(ngModel)]="book.title"
+      placeholder="Title"
+      required
+    />
+    <input
+      type="text"
+      name="author"
+      [(ngModel)]="book.author"
+      placeholder="Author"
+      required
+    />
+    <input
+      type="number"
+      name="price"
+      [(ngModel)]="book.price"
+      placeholder="Price"
+      required
+    />
+    <input
+      type="text"
+      name="category"
+      [(ngModel)]="book.category"
+      placeholder="Category"
+      required
+    />
+    <input
+      type="text"
+      name="cover"
+      [(ngModel)]="book.cover"
+      placeholder="Cover Image URL"
+      required
+    />
+    <input
+      type="number"
+      name="stock"
+      [(ngModel)]="book.stock"
+      placeholder="Stock Quantity"
+      required
+    />
+    <textarea
+      name="description"
+      [(ngModel)]="book.description"
+      placeholder="Description"
+      rows="4"
+    ></textarea>
+    <button type="submit">Add Book</button>
+  </form>
+</div>
+<p-dialog
+  header="Notification"
+  [(visible)]="displayModal"
+  modal="true"
+  [closable]="true"
+  (onHide)="onModalHide()"
+>
+  <p>{{ modalMessage }}</p>
+  <p-footer>
+    <button
+      type="button"
+      pButton
+      label="OK"
+      (click)="displayModal = false"
+    ></button>
+  </p-footer>
+</p-dialog>

@@ -33,6 +33,11 @@ export class AuthService {
     );
   }
 
+  // ✅ Get users by email
+  getUsersByEmail(email: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}?email=${email}`);
+  }
+
   setAuth(user: any): void {
     localStorage.setItem('user', JSON.stringify(user));
     this.loggedIn.next(true); // ← تحديث الحالة
@@ -62,6 +67,6 @@ export class AuthService {
 
   // ✅ التحقق إذا كان المستخدم مسؤول (admin)
   isAdmin(): boolean {
-    return this.getUserRole() === 'admin';
+    return this.getUser()?.role === 'admin';
   }
 }

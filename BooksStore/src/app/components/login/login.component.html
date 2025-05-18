@@ -1,5 +1,5 @@
 <div class="form-container">
-  <h2>{{ 'LOGIN.TITLE' | translate }}</h2>
+  <h2>{{ "LOGIN.TITLE" | translate }}</h2>
   <form (ngSubmit)="login()" #form="ngForm">
     <input
       type="email"
@@ -28,20 +28,20 @@
     <!-- Remember me checkbox -->
     <div class="remember-me-container">
       <label>
-        <input type="checkbox" [(ngModel)]="rememberMe" />
-        {{ 'LOGIN.REMEMBER_ME' | translate }}
+        <input type="checkbox" [(ngModel)]="rememberMe" name="rememberMe" />
+        {{ "LOGIN.REMEMBER_ME" | translate }}
       </label>
     </div>
 
     <button type="submit" [disabled]="!form.valid">
-      {{ 'LOGIN.BUTTON' | translate }}
+      {{ "LOGIN.BUTTON" | translate }}
     </button>
 
     <!-- Link to registration page -->
     <div class="signup-link">
       <p>
-        {{ 'LOGIN.NO_ACCOUNT' | translate }}
-        <a routerLink="/register">{{ 'LOGIN.SIGNUP_LINK' | translate }}</a>
+        {{ "LOGIN.NO_ACCOUNT" | translate }}
+        <a routerLink="/register">{{ "LOGIN.SIGNUP_LINK" | translate }}</a>
       </p>
     </div>
   </form>

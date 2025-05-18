@@ -6,7 +6,6 @@ import { MessageService } from 'primeng/api';
 import { TranslatePipe } from '../../pips/translate.pipe';
 import { TranslateService } from '@ngx-translate/core';
 
-
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -25,39 +24,45 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  login(): void {
-    if (!this.email || !this.password) {
-      alert('Please enter both email and password.');
+ login(): void {
+  if (!this.email || !this.password) {
+    alert('❗ Please enter both email and password.');
+    return;
+  }
+
+  this.authService.getUsersByEmail(this.email).subscribe((users) => {
+    if (users.length === 0) {
+      alert('🚫 This email is not registered.');
       return;
     }
 
-    // Send login data to the auth service
-    this.authService.login(this.email, this.password).subscribe((users) => {
-      if (users.length > 0) {
-        const user = users[0];
-        this.authService.setAuth(user); // Assuming this sets authentication data
+    const encodedPassword = btoa(this.password);
+    const matchedUser = users.find(user => user.password === encodedPassword);
 
-        // Check if Remember Me is enabled
-        if (this.rememberMe) {
-          // Save user data in localStorage if Remember Me is checked
-          localStorage.setItem('user', JSON.stringify(user));
-        } else {
-          // Optionally, you can use sessionStorage for the current session
-          sessionStorage.setItem('user', JSON.stringify(user));
-        }
+    if (!matchedUser) {
+      alert('🚫 Incorrect email or password.');
+      return;
+    }
 
-        alert('Login successful!');
+    // ✅ Successful login
+    this.authService.setAuth(matchedUser);
 
-        if (this.authService.isAdmin()) {
-          this.router.navigate(['/admin']);
-        } else {
-          this.router.navigate(['/books']);
-        }
-      } else {
-        alert('Invalid email or password.');
-      }
-    });
-  }
+    if (this.rememberMe) {
+      localStorage.setItem('user', JSON.stringify(matchedUser));
+    } else {
+      sessionStorage.setItem('user', JSON.stringify(matchedUser));
+    }
+
+    alert('✅ Login successful!');
+
+    if (this.authService.isAdmin()) {
+      this.router.navigate(['/admin']);
+    } else {
+      this.router.navigate(['/books']);
+    }
+  });
+}
+
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;

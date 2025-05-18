@@ -1,0 +1,44 @@
+<div *ngIf="isLoading">
+  <p>Loading book data...</p>
+</div>
+
+<div *ngIf="!isLoading">
+  <h2>Edit Book</h2>
+  <form (ngSubmit)="saveBook()">
+    <div>
+      <label for="title">Title:</label>
+      <input id="title" [(ngModel)]="book.title" name="title" required />
+    </div>
+
+    <div>
+      <label for="author">Author:</label>
+      <input id="author" [(ngModel)]="book.author" name="author" required />
+    </div>
+
+    <div>
+      <label for="category">Category:</label>
+      <input id="category" [(ngModel)]="book.category" name="category" required />
+    </div>
+
+    <div>
+      <label for="price">Price:</label>
+      <input
+        id="price"
+        type="number"
+        [(ngModel)]="book.price"
+        name="price"
+        required
+        min="0"
+        step="0.01"
+      />
+    </div>
+
+    <div>
+      <label for="cover">Cover URL:</label>
+      <input id="cover" [(ngModel)]="book.cover" name="cover" />
+    </div>
+
+    <button type="submit">Save</button>
+    <button type="button" (click)="router.navigate(['/books'])">Cancel</button>
+  </form>
+</div>

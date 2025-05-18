@@ -24,8 +24,8 @@ export class BookListComponent {
   constructor(
     private bookService: BookService,
     private cartService: CartService,
-    private authService: AuthService,
-    private router: Router
+    private router: Router,
+    public authService: AuthService
   ) {}
 
   get uniqueCategories() {
@@ -49,7 +49,7 @@ export class BookListComponent {
   ngOnInit(): void {
     this.bookService.getBooks().subscribe((data) => {
       this.books = data;
-        this.isLoading = false;
+      this.isLoading = false;
     });
   }
 
@@ -62,5 +62,17 @@ export class BookListComponent {
 
     this.cartService.addToCart(book);
     alert(`${book.title} added to cart`);
+  }
+
+  deleteBook(bookId: number): void {
+    if (confirm('Are you sure you want to delete this book?')) {
+      this.bookService.deleteBook(bookId).subscribe(() => {
+        this.books = this.books.filter((b) => b.id !== bookId);
+      });
+    }
+  }
+
+  editBook(bookId: number): void {
+    this.router.navigate(['/books/edit', bookId]);
   }
 }

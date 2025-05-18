@@ -1,14 +1,3 @@
-.book-list {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* عام */
-.book-list {
-  padding: 2rem;
-}
-
 /* فلتر الفئة وحقل البحث */
 .filter-container {
   display: flex;
@@ -78,7 +67,7 @@
   animation: l16 1s infinite linear;
 }
 .loader::before,
-.loader::after {    
+.loader::after {
   content: "";
   grid-area: 1/1;
   margin: 2px;
@@ -87,15 +76,17 @@
 }
 .loader::before {
   border-color: #f03355 #0000;
-  animation: inherit; 
-  animation-duration: .5s;
+  animation: inherit;
+  animation-duration: 0.5s;
   animation-direction: reverse;
 }
 .loader::after {
   margin: 8px;
 }
-@keyframes l16 { 
-  100%{transform: rotate(1turn)}
+@keyframes l16 {
+  100% {
+    transform: rotate(1turn);
+  }
 }
 
 .book-card img {
@@ -107,9 +98,13 @@
 }
 
 .book-card h2 {
-  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 30px;
   color: #333;
   margin-top: 1rem;
+   width: 100%; 
 }
 
 .book-card p {
@@ -126,16 +121,7 @@
   margin-top: 1.5rem;
 }
 
-.btn-custom {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s ease;
-}
+
 
 .btn-primary-custom {
   background-color: #3498db;
@@ -169,7 +155,6 @@
   font-weight: bold;
 }
 
-
 .books-grid {
   display: grid;
   gap: 20px;
@@ -179,12 +164,12 @@
 .button-container {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center; 
-  gap: 16px; 
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
   width: 100%;
-  max-width: 400px; 
-  margin: 0 auto; 
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .btn-custom {
@@ -233,6 +218,59 @@
 .btn-custom i {
   margin-right: 8px;
   font-size: 18px;
+}
+
+.delete-btn {
+ display: inline-block;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  width: 90%;
+  background-color: #d1251f;
+  background-image: linear-gradient(45deg, #c73a3a, #f51c1c);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    background-color: #c62828;
+    transform: scale(1.03);
+  }
+
+  &:active {
+    background-color: #b71c1c;
+    transform: scale(0.98);
+  }
+}
+
+.btn-edit{
+ display: inline-block;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  width: 90%;
+  background-color: #025f0f;
+  background-image: linear-gradient(45deg, #afe943, #116d05);
+
+  &:hover {
+    background-color: #116806;
+    transform: scale(1.03);
+  }
+
+  &:active {
+    background-color: #22720e;
+    transform: scale(0.98);
+  }
 }
 
 /* Responsive Grid */

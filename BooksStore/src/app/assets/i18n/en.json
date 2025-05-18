@@ -7,5 +7,16 @@
     "BUTTON": "Login",
     "NO_ACCOUNT": "Don't have an account?",
     "SIGNUP_LINK": "Sign up here"
+  },
+  "ADMIN": {
+    "TITLE": "Admin Dashboard",
+    "USERS_SECTION": "Users",
+    "TABLE": {
+      "NAME": "Name",
+      "EMAIL": "Email",
+      "ACTIONS": "Actions",
+      "EDIT": "Edit",
+      "DELETE": "Delete"
+    }
   }
 }

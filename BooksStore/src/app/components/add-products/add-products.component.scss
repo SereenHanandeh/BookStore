@@ -1,0 +1,144 @@
+.add-book-form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: 0.3s ease-in-out;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #4a4a4a;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    input,
+    textarea {
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      transition: 0.2s ease-in-out;
+
+      &:focus {
+        outline: none;
+        border-color: #5c7cfa;
+        box-shadow: 0 0 0 3px rgba(92, 124, 250, 0.2);
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      padding: 12px;
+      background-color: #5c7cfa;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #3b5bdb;
+      }
+
+      &:active {
+        background-color: #364fc7;
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .add-book-form {
+    padding: 20px;
+  }
+}
+/* حاوية المودال */
+.p-dialog {
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: fadeInUp 0.4s ease;
+}
+
+/* رأس المودال */
+.p-dialog .p-dialog-header {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 1.2rem 1.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-bottom: none;
+}
+
+/* زر الإغلاق */
+.p-dialog .p-dialog-header .p-dialog-header-icon {
+  color: white;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+.p-dialog .p-dialog-header .p-dialog-header-icon:hover {
+  transform: scale(1.2);
+}
+
+/* محتوى المودال */
+.p-dialog .p-dialog-content {
+  background-color: #fdfdff;
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  color: #444;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* فوتر المودال */
+.p-dialog .p-dialog-footer {
+  background-color: #f3f4f6;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* زر OK */
+.p-button {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.p-button:hover {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  transform: scale(1.05);
+}
+
+/* أنيميشن دخول */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

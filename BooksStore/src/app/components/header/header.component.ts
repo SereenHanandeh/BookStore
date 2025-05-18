@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -13,9 +14,14 @@ export class HeaderComponent {
   isLoggedIn = false;
   userName = '';
   userImage = '';
-  userRole = ''; 
+  userRole = '';
+  cartItemCount = 0;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private cartService: CartService
+  ) {}
 
   ngOnInit(): void {
     this.authService.isLoggedIn$.subscribe((status) => {
@@ -25,13 +31,16 @@ export class HeaderComponent {
       if (user) {
         this.userName = user.name;
         this.userImage = user.image || '👤';
-        this.userRole = user.role || ''; 
+        this.userRole = user.role || '';
       }
+    });
+    this.cartService.cartItemsCount$.subscribe((count) => {
+      this.cartItemCount = count;
     });
   }
 
   logout() {
     this.authService.logout();
-    this.router.navigate(['/']); 
+    this.router.navigate(['/']);
   }
 }

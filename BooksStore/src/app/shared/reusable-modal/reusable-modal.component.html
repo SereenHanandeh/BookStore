@@ -1,0 +1,32 @@
+<p-dialog
+  [(visible)]="visible"
+  [modal]="true"
+  [closable]="false"
+  [style]="{ width: '400px' }"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  (onHide)="closeModal()"
+>
+  <ng-template pTemplate="header">
+    <div class="modal-header">
+      <h3>{{ title }}</h3>
+      <button type="button" class="close-btn" (click)="closeModal()">
+        &times;
+      </button>
+    </div>
+  </ng-template>
+
+  <div class="modal-body">
+    <p>{{ message }}</p>
+  </div>
+
+  <ng-template pTemplate="footer">
+    <button
+      pButton
+      label="Close"
+      class="p-button-text"
+      (click)="closeModal()"
+    ></button>
+  </ng-template>
+</p-dialog>

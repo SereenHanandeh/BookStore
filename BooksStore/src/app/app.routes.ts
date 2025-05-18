@@ -10,9 +10,11 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { adminGuard } from './gurds/admin.guard';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { AddProductsComponent } from './components/add-products/add-products.component';
+import { EditBookComponent } from './components/edit-book/edit-book.component';
 
 export const routes: Routes = [
-   { path: '', component: WelcomeComponent },
+  { path: '', component: WelcomeComponent },
   { path: 'books', component: BookListComponent, canActivate: [authGuard] },
   { path: 'books/:id', component: BookDetailsComponent },
   { path: 'cart', component: CartComponent, canActivate: [authGuard] },
@@ -24,5 +26,12 @@ export const routes: Routes = [
     component: AdminDashboardComponent,
     canActivate: [adminGuard],
   },
-   { path: '**', component: NotFoundComponent },
+  {
+    path: 'add-book',
+    component: AddProductsComponent,
+    canActivate: [adminGuard],
+  },
+  { path: 'books/edit/:id', component: EditBookComponent },
+
+  { path: '**', component: NotFoundComponent },
 ];

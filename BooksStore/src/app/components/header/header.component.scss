@@ -3,10 +3,10 @@
   align-items: center;
   justify-content: space-between;
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  padding: 1rem 2rem;
+  padding: .5rem 1rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-  border-radius: 0 0 15px 15px;
-  font-family: 'Segoe UI', sans-serif;
+  // border-radius: 0 0 15px 15px;
+  font-family: "Segoe UI", sans-serif;
   flex-wrap: wrap;
 }
 
@@ -17,6 +17,7 @@
   text-decoration: none;
   text-shadow: 2px 2px 0 #1e90ff, 4px 4px 0 #555;
   transition: transform 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
 }
 
 .store-name a:hover {
@@ -31,49 +32,70 @@
   flex-wrap: wrap;
 }
 
-.nav-links a {
+.nav-links a.icon-link {
+  position: relative;
   color: #fff;
-  text-decoration: none;
   font-weight: 500;
+  font-size: 1.5rem;
+  text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.nav-links a:hover {
+.nav-links a.icon-link:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Tooltip style */
+.icon-link .tooltip-text {
+  visibility: hidden;
+  width: max-content;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  position: absolute;
+  bottom: 80%; /* قللت المسافة */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* مثلث صغير تحت الـ tooltip */
+.icon-link .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* أسفل الصندوق */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.icon-link:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
 
 .user-name {
   font-weight: bold;
   color: #fff;
   margin-right: 1rem;
+  font-size: 1.2rem;
 }
 
-.btn-3d {
-  padding: 0.4rem 1rem;
-  border-radius: 8px;
-  background-color: #4e9af1;
-  color: white !important;
-  font-weight: bold;
-  box-shadow: 0 4px #2c79c1;
-  transition: all 0.2s ease-in-out;
-}
-
-.btn-3d:hover {
-  background-color: #357ec7;
-  transform: translateY(-2px);
-  box-shadow: 0 6px #1e5f9d;
-}
-
-.logout {
-  background-color: #f44336;
-  box-shadow: 0 4px #c62828;
-}
-
-.logout:hover {
-  background-color: #d32f2f;
-  box-shadow: 0 6px #b71c1c;
-}
 .profile-link {
   display: flex;
   align-items: center;
@@ -86,4 +108,21 @@
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #ccc;
+}
+
+.cart-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
 }

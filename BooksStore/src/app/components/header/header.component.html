@@ -6,40 +6,69 @@
   <div class="nav-links">
     <!-- Show the "Home" link only for users who are not logged in -->
     <ng-container *ngIf="!isLoggedIn">
-      <a routerLink="/">🏠 Home</a>
+      <a routerLink="/" class="icon-link"
+        >🏠
+        <span class="tooltip-text">Home</span>
+      </a>
     </ng-container>
 
-    <!-- Add the link to the books page here -->
-    <a routerLink="/books">📚 Books</a>
+    <!-- Books page link -->
+    <a routerLink="/books" class="icon-link"
+      >📚
+      <span class="tooltip-text">Books</span>
+    </a>
 
     <ng-container *ngIf="isLoggedIn; else guestLinks">
-      <span class="user-name">👋 Hello, {{ userName }}</span>
+      <span class="user-name">👋 {{ userName }}</span>
 
-      <!-- Admin links appear only for users with role "admin" -->
+      <!-- Admin links -->
       <ng-container *ngIf="userRole === 'admin'">
-        <a routerLink="/profile" class="profile-link">
+        <a routerLink="/profile" class="profile-link icon-link">
           <img [src]="userImage" alt="Profile" class="profile-image" />
-          Profile
+          <span class="tooltip-text">Profile</span>
         </a>
-        <a routerLink="/admin">🛠️ Admin Panel</a>
+        <a routerLink="/admin" class="icon-link"
+          >🛠️
+          <span class="tooltip-text">Admin Panel</span>
+        </a>
+        <a routerLink="/add-book" class="icon-link"
+          >➕
+          <span class="tooltip-text">Add Product</span>
+        </a>
 
-        <a (click)="logout()">🚪 Logout</a>
+        <a (click)="logout()" class="icon-link"
+          >🚪
+          <span class="tooltip-text">Logout</span>
+        </a>
       </ng-container>
 
-      <!-- Non-admin users' regular links -->
+      <!-- Regular user links -->
       <ng-container *ngIf="userRole !== 'admin'">
-        <a routerLink="/profile" class="profile-link">
+        <a routerLink="/profile" class="profile-link icon-link">
           <img [src]="userImage" alt="Profile" class="profile-image" />
-          Profile
+          <span class="tooltip-text">Profile</span>
         </a>
-        <a routerLink="/cart">🛒 Cart</a>
-        <a (click)="logout()">🚪 Logout</a>
+        <a routerLink="/cart" class="icon-link"
+          >🛒
+          <span class="tooltip-text">Cart</span>
+           <span *ngIf="cartItemCount > 0" class="cart-count">{{ cartItemCount }}</span>
+        </a>
+        <a (click)="logout()" class="icon-link"
+          >🚪
+          <span class="tooltip-text">Logout</span>
+        </a>
       </ng-container>
     </ng-container>
 
     <ng-template #guestLinks>
-      <a routerLink="/login">🔑 Login</a>
-      <a routerLink="/register">📝 Register</a>
+      <a routerLink="/login" class="icon-link"
+        >🔑
+        <span class="tooltip-text">Login</span>
+      </a>
+      <a routerLink="/register" class="icon-link"
+        >📝
+        <span class="tooltip-text">Register</span>
+      </a>
     </ng-template>
   </div>
 </nav>
